@@ -8,117 +8,98 @@
 
     body{
 
-        /*background-color: #FFD29E;*/
+        /*background-color: #FFD29E;
         background: linear-gradient(to right, #FFD29E, #aa8255);
             background-repeat: no-repeat;
+            background-attachment: fixed;*/
+
+            background-image: url(pictures/orange.jpg); 
+            background-repeat: no-repeat;
             background-attachment: fixed;
-
-
+            background-position: center;
+            background-size: cover;
     }
-
+    /*h3 {color: forestgreen;}
+    p {color: limegreen}*/
 </style>
 
     <title> 
         S.M.E.E./Research
      </title>
+     <script>
+		
+        function toggleDefinition(event) {
+			const definition = event.target.nextElementSibling;
+            const nTitle = definition.nextElementSibling;
+			if (definition.style.display === 'none') {
+				  definition.style.display = 'block';
+          nTitle.style.display = 'block';
+			} else {
+				  definition.style.display = 'none';
+          nTitle.style.display = 'none';
+			}
+		}
+        
+        function togglen(event) {
+            const nList = event.target.nextElementSibling;
+            if (nList.style.display === 'none') {
+                nList.style.display = 'block';
+            } else {
+                nList.style.display = 'none';
+            }
+        }
 
+		
+		function displayWord(word, definition, n) {
+			const wordDiv = document.createElement('div');
+			wordDiv.className = 'word';
+			wordDiv.textContent = word;
+			wordDiv.addEventListener('click', toggleDefinition);
+			
+			const definitionDiv = document.createElement('div');
+			definitionDiv.className = 'definition';
+			definitionDiv.textContent = definition;
+            
+            const nTitleDiv = document.createElement('div');
+            nTitleDiv.className = 'nTitle';
+            nTitleDiv.textContent = 'n';
+            nTitleDiv.addEventListener('click', togglen);
+            
+            const nListDiv = document.createElement('div');
+            nListDiv.className = 'nList';
+            nListDiv.textContent = n;
+			
+			document.body.appendChild(wordDiv);
+			document.body.appendChild(definitionDiv);
+            document.body.appendChild(nTitleDiv);
+            document.body.appendChild(nListDiv);
+
+		}
+
+	</script>
 </head>
 
 <body>
+    <script>
+        displayWord('AUP', ' Animal Use Protocol // are reviewed by the IACUC   ', '                                          ');
+        displayWord('Bar Graph', ' A graph using bars to compare data from two or more categories. ', );
+        displayWord('Biosafety', ' Act of killing someone painlessly., ');
+        displayWord('Euthanasia ', ' A polygon whose diagonal lines can only be outside. ', '');
+        displayWord('Frequency Distribution', ' An overview of all values in a variable and the number of times the said variable occurs.', '');
+        displayWord('Histogram ', 'A graph that uses large rectangular bars that shows continuous data.', '');
+        displayWord('IACUC', 'Institutional Animal Care and Use Comitees // IACUC reviews research protocols and conducts evaluations of the institutions animal care and use.', '');
+        displayWord('Line Graph', 'A graph using a line with dots presenting the change of number or value over time. ', '');
+        displayWord('Mean', 'Represents the average of the value of the dataset.', '');
+        displayWord('Median', 'The middle value of the dataset in which the dataset is arranged ascending or descending. ', '');
+        displayWord(' Mode', ' The frequency of the occuring value in the dataset. ', '');
+        displayWord('OLAW', 'Office of Laboratory Animal Welfare // helps in developing the role of the IACUC.', '');
+        displayWord('Pie Chart', ' a circular graph that shows proportional data.','');
+        displayWord('Qualitative Observation', 'Data that doesnt use values; descriptive.', '');
+        displayWord('Quantitative Observation', ' Data that is based on values; percentage, values, etc. ', '');
+    </script>
+    <div id="sci text"> 
 
-<h3>
-    AUP
-</h3>
-    <p>
-        Animal Use Protocol // are reviewed by the IACUC
-    </p>
-
-<h3>
-    Bar Graph
-</h3>
-    <p>
-        a graph using bars to compare data from two or more categories
-    </p>
-
-<h3>
-    Biosafety
-</h3>
-    <p>
-        the application of knowledge, techniques and equipment to prevent exposure to biohazards
-    </p>
-<h3>
-    Euthanasia
-</h3>
-    <p>
-        act of killing someone painlessly
-    </p>
-<h3>
-    Frequency Distribution
-</h3>
-    <p>
-        an overview of all values in a variable and the number of times the said variable occurs
-    </p>
-<h3>
-    Histogram
-</h3>
-    <p>
-        a graph that uses large rectangular bars that shows continuous data
-    </p>
-<h3>
-    IACUC
-</h3>
-    <p>
-        Institutional Animal Care and Use Comitees // IACUC reviews research protocols and conducts evaluations of the institution's animal care and use
-    </p>
-<h3>
-    Line Graph
-</h3>
-    <p>
-        a graph using a line with dots presenting the change of number or value over time
-    </p>
-<h3>
-    Mean
-</h3>
-    <p>
-        represents the average of the value of the dataset
-    </p>
-<h3>
-    Median
-</h3>
-    <p>
-        the middle value of the dataset in which the dataset is arranged ascending or descending
-    </p>
-<h3>
-    Mode
-</h3>
-    <p>
-        the frequency of the occuring value in the dataset
-    </p>
-<h3>
-    OLAW
-</h3>
-    <p>
-        Office of Laboratory Animal Welfare // helps in developing the role of the IACUC
-    </p>
-<h3>
-    Pie Chart
-</h3>
-    <p>
-        a circular graph that shows proportional data
-    </p>
-<h3>
-    Qualitative Observation
-</h3>
-    <p>
-        data that doesn't use values; descriptive
-    </p>
-<h3>
-    Quantitative Observation
-</h3>
-    <p>
-        data that is based on values; percentage, values, etc.
-    </p>
-    
+    </div>
 <a href="index.html" target="_self "title="help me" >
  back to main page
  </a>

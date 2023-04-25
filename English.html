@@ -7,10 +7,16 @@
     <style>
 
         body{
-            /*background-color: #FDD3F5;*/
+            /*background-color: #FDD3F5;
             background: linear-gradient(to right, #FDD3F5, #ce91c3);
             background-repeat: no-repeat;
+            background-attachment: fixed; */
+
+            background-image: url(pictures/english\ back.jpg); 
+            background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
 
             }
         
@@ -19,15 +25,85 @@
     <title> 
         S.M.E.E./Eng
     </title>
+    <script>
+		
+        function toggleDefinition(event) {
+			const definition = event.target.nextElementSibling;
+            const nTitle = definition.nextElementSibling;
+			if (definition.style.display === 'none') {
+				  definition.style.display = 'block';
+          nTitle.style.display = 'block';
+			} else {
+				  definition.style.display = 'none';
+          nTitle.style.display = 'none';
+			}
+		}
+        
+        function togglen(event) {
+            const nList = event.target.nextElementSibling;
+            if (nList.style.display === 'none') {
+                nList.style.display = 'block';
+            } else {
+                nList.style.display = 'none';
+            }
+        }
 
+		
+		function displayWord(word, definition, n) {
+			const wordDiv = document.createElement('div');
+			wordDiv.className = 'word';
+			wordDiv.textContent = word;
+			wordDiv.addEventListener('click', toggleDefinition);
+			
+			const definitionDiv = document.createElement('div');
+			definitionDiv.className = 'definition';
+			definitionDiv.textContent = definition;
+            
+            const nTitleDiv = document.createElement('div');
+            nTitleDiv.className = 'nTitle';
+            nTitleDiv.textContent = 'n';
+            nTitleDiv.addEventListener('click', togglen);
+            
+            const nListDiv = document.createElement('div');
+            nListDiv.className = 'nList';
+            nListDiv.textContent = n;
+			
+			document.body.appendChild(wordDiv);
+			document.body.appendChild(definitionDiv);
+            document.body.appendChild(nTitleDiv);
+            document.body.appendChild(nListDiv);
+
+		}
+
+	</script>
 </head>
 
 <body>
 
-<a href="index.html" target="_self "title="help me" >
- back to main page
- </a>
 
+     <script>
+         displayWord('Belief', ' Something that an individual considers as the truth.   ', '');
+         displayWord('Culture', '(In a selection) It talks about the common arts, beliefs, characteristics, conducts, and norms of a group living together. ', );
+         displayWord('Conviction', ' A firm belief in something thatan individual is convinced of. , ');
+         displayWord('Clarity ', ' It refers to how clear the speech is. ', '');
+         displayWord('Environment ', ' (In a selection) It talks about the environmental factors that help develop one’s behavior, personality, and intelligence such as physical location, social settings, and weather or climate. ', '');
+         displayWord('Extemporaneous ', 'doing or spoken without preparation. ', '');
+         displayWord('Forms of Animation', 'Flipping through a series of still images. It is a series of graphics that create an illusion of motion to display pieces of information with moving or still images and are easily transferable. ', '');
+         displayWord('Graphics/Photographs', 'Digital representations of non-text information such as a drawing, chart, or photograph. They give ideas in the images with the help of memory and are also one of the oldest forms of media. ', '');
+         displayWord('History', '(In a selection) – It talks about the sequential events that are recorded in a nation or an institution that gives significant contributions. ', '');
+         displayWord('Impromptu', 'Doing something without preparation. ', '');
+         displayWord('Manuscript', ' A book, document, or piece of music written by hand rather than typed or printed. ', '');
+         displayWord('Platform Behavior', 'It is everything that the speaker does and does not do on the stage.', '');
+         displayWord('Pronunciation', 'How someone pronounces a word. ', '');
+         displayWord('Selection', '(In English literature) A passage excerpted (or selected) from a longer text. ', '');
+         displayWord('Sound/Audio', ' Any spoken explanation that stimulates the imagination and can be added and combined with all types of media. ', '');
+         displayWord('Text Media', 'Important components used in written explanations to deliver information in multimedia applications. ', '');
+     </script>
+ 
+ <a href="index.html" target="_self "title="help me" >
+    back to main page
+    </a>
+    
 </body>
 
 </html>
