@@ -7,11 +7,18 @@
     <style>
 
         body{
-            /*background-color: #BAF0D3;*/
+            /*background-color: #BAF0D3;
             background: linear-gradient(to right, #BAF0D3, #5b9e7a);
             background-repeat: no-repeat;
+            background-attachment: fixed; */
+            
+            background-image: url(pictures/envi\ sci\ back.jpg); 
+            background-repeat: no-repeat;
             background-attachment: fixed;
-
+            background-position: center;
+            background-size: cover;
+            padding-top: 100px;
+            padding-bottom: 100px;
             }
         
     </style>
@@ -19,102 +26,78 @@
     <title> 
         S.M.E.E./Envi
      </title>
+     <script>
+		
+        function toggleDefinition(event) {
+			const definition = event.target.nextElementSibling;
+            const nTitle = definition.nextElementSibling;
+			if (definition.style.display === 'none') {
+				  definition.style.display = 'block';
+          nTitle.style.display = 'block';
+			} else {
+				  definition.style.display = 'none';
+          nTitle.style.display = 'none';
+			}
+		}
+        
+        function togglen(event) {
+            const nList = event.target.nextElementSibling;
+            if (nList.style.display === 'none') {
+                nList.style.display = 'block';
+            } else {
+                nList.style.display = 'none';
+            }
+        }
+
+		
+		function displayWord(word, definition, n) {
+			const wordDiv = document.createElement('div');
+			wordDiv.className = 'word';
+			wordDiv.textContent = word;
+			wordDiv.addEventListener('click', toggleDefinition);
+			
+			const definitionDiv = document.createElement('div');
+			definitionDiv.className = 'definition';
+			definitionDiv.textContent = definition;
+            
+            const nTitleDiv = document.createElement('div');
+            nTitleDiv.className = 'nTitle';
+            nTitleDiv.textContent = 'n';
+            nTitleDiv.addEventListener('click', togglen);
+            
+            const nListDiv = document.createElement('div');
+            nListDiv.className = 'nList';
+            nListDiv.textContent = n;
+			
+			document.body.appendChild(wordDiv);
+			document.body.appendChild(definitionDiv);
+            document.body.appendChild(nTitleDiv);
+            document.body.appendChild(nListDiv);
+
+		}
+
+	</script>
 
 </head>
-
+     
 <body>
-
- <h3>
-    Abundant
-</h3>
-    <p>
-        existing or available in large quantities; plentiful.
-    </p>
-
-<h3>
-    Acute
-</h3>
-    <p>
-        Bad, difficult, or unwelcome situation or phenomenon, present or experienced to a severe or intense degree.
-    </p>
-<h3>
-    Ammonification
-</h3>
-    <p>
-        When an organism excretes waste or dies, the nitrogen in its tissues is in the form of organic nitrogen.
-    </p>
-<h3>
-    Assimilation
-</h3>
-    <p>
-        The absorption and digestion of food or nutrients by the body or any biological system.
-    </p>
-<h3>
-    Capillarity
-</h3>
-    <p>
-        The tendency of a liquid in a capillary tube or absorbent material to rise or fall as a result of surface tension.
-    </p>
-<h3>
-    Chronic
-</h3>
-    <p>
-        Persisting for a long time or constantly recurring.
-    </p>
-<h3>
-    Combustion
-</h3>
-    <p>
-        The process of burning something.
-    </p>
-<h3>
-    Condenses
-</h3>
-    <p>
-        Change or cause to change from a gas or vapor to a liquid.
-    </p>
-<h3>
-    Erosion
-</h3>
-    <p>
-        The geological process in which earthen materials are worn away and transported by natural forces such as wind or water.
-    </p>
-<h3>
-    Hospitable
-</h3>
-    <p>
-        Pleasant and favorable for living in.
-    </p>
-<h3>
-    Nitrification
-</h3>
-    <p>
-        Nitrification is the biological oxidation of ammonia to nitrite followed by the oxidation of the nitrite to nitrate occurring through separate organisms or direct ammonia oxidation to nitrate in comammox bacteria.
-    </p>
-<h3>
-    Percolation
-</h3>
-    <p>
-        The movement of water through the soil itself.
-    </p>
-<h3>
-    Precipitation
-</h3>
-    <p>
-        Water that falls from the atmosphere to the Earth's surface.
-    </p>
-<h3>
-    Stunting
-</h3>
-    <p>
-        Impaired growth and development that children experience from poor nutrition, repeated infection, and inadequate psychosocial stimulation.
-    </p>
-<h3>
-    Wasting
-</h3>
-    <p>
-        Causing a person or a part of the body to become progressively weaker and more emaciated.
-    </p>
+    <script>
+        displayWord('Abundant:', ' existing or available in large quantities; plentiful.   ', 'Rainfall is more abundant in summer.                         ');
+        displayWord('Acute:', 'Bad, difficult, or unwelcome situation or phenomenon, present or experienced to a severe or intense degree. ', 'He was suffering from acute chest pains.');
+        displayWord('Ammonification:', ' When an organism excretes waste or dies, the nitrogen in its tissues is in the form of organic nitrogen.  ', 'These large changes likely overwhelmed any potential changes in sediment microbiome related to ammonification rate.');
+        displayWord('Assimilation: ', ' The absorption and digestion of food or nutrients by the body or any biological system. ', 'Assimilation is the movement of digested food molecules into the cells of the body where they are used.');
+        displayWord('Chronic:', ' Persisting for a long time or constantly recurring.', 'My grandmother is suffering from a chronic illness.');
+        displayWord(' Combustion: ', 'The process of burning something.', 'The energy is released by combustion on the application of a match.');
+        displayWord('Capillarity:', 'The tendency of a liquid in a capillary tube or absorbent material to rise or fall as a result of surface tension.', 'If water runs straight through dry compost, it can be drawn up again by capillary action.');
+        displayWord('Condenses:', 'Change or cause to change from a gas or vapor to a liquid. ', 'If you leave gas at a cool temperature it condenses.');
+        displayWord('Erosion:', '(The geological process in which earthen materials are worn away and transported by natural forces such as wind or water.', 'Landscapers planted grass to stop the erosion of the hillside.');
+        displayWord('Hospitable:', 'Pleasant and favorable for living in. ', 'Her environment is very hospitable.');
+        displayWord('Nitrification:', ' Nitrification is the biological oxidation of ammonia to nitrite followed by the oxidation of the nitrite to nitrate occurring through separate organisms or direct ammonia oxidation to nitrate in comammox bacteria. ', 'By nitrification this substance rapidly becomes available to succeeding crops.');
+        displayWord('Percolation:', 'The movement of water through the soil itself.', 'Percolation occurs when the water on the earths surface in the run-off stage seeps underground.');
+        displayWord('Precipitation:', ' Water that falls from the atmosphere to the Earth surface','Minerals are separated from the seawater by precipitation.');
+        displayWord('Stunting:', 'Impaired growth and development that children experience from poor nutrition, repeated infection, and inadequate psychosocial stimulation.', 'Yuri believes her diet is stunting her growth rate.');
+        displayWord('Wasting:', ' Causing a person or a part of the body to become progressively weaker and more emaciated. ', 'Her liver is wasting if she does not stop drinking.');
+    </script>
 
 <a href="index.html" target="_self "title="help me" >
     back to main page

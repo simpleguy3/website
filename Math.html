@@ -6,10 +6,16 @@
     <style>
 
         body{
-            /*background-color: #C4F4FF;*/
+            /*background-color: #C4F4FF;
             background: linear-gradient(to right, #C4F4FF, #619eac);
             background-repeat: no-repeat;
+            background-attachment: fixed;*/
+
+            background-image: url(pictures/WET.jpg); 
+            background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
 
             }
         
@@ -18,102 +24,78 @@
     <title> 
         S.M.E.E./Math
      </title>
+     <script>
+		
+        function toggleDefinition(event) {
+			const definition = event.target.nextElementSibling;
+            const nTitle = definition.nextElementSibling;
+			if (definition.style.display === 'none') {
+				  definition.style.display = 'block';
+          nTitle.style.display = 'block';
+			} else {
+				  definition.style.display = 'none';
+          nTitle.style.display = 'none';
+			}
+		}
+        
+        function togglen(event) {
+            const nList = event.target.nextElementSibling;
+            if (nList.style.display === 'none') {
+                nList.style.display = 'block';
+            } else {
+                nList.style.display = 'none';
+            }
+        }
 
+		
+		function displayWord(word, definition, n) {
+			const wordDiv = document.createElement('div');
+			wordDiv.className = 'word';
+			wordDiv.textContent = word;
+			wordDiv.addEventListener('click', toggleDefinition);
+			
+			const definitionDiv = document.createElement('div');
+			definitionDiv.className = 'definition';
+			definitionDiv.textContent = definition;
+            
+            const nTitleDiv = document.createElement('div');
+            nTitleDiv.className = 'nTitle';
+            nTitleDiv.textContent = 'n';
+            nTitleDiv.addEventListener('click', togglen);
+            
+            const nListDiv = document.createElement('div');
+            nListDiv.className = 'nList';
+            nListDiv.textContent = n;
+			
+			document.body.appendChild(wordDiv);
+			document.body.appendChild(definitionDiv);
+            document.body.appendChild(nTitleDiv);
+            document.body.appendChild(nListDiv);
+
+		}
+
+	</script>
 </head>
 
 <body>
-
-    <h3>
-        Congruent
-    </h3>
-        <p>
-            Has equal size and shape.
-        </p>
-    <h3>
-        Concurrent
-    </h3>
-        <p>
-            Three or more lines that intersect at one point.
-        </p>
-    <h3>
-        Concave
-    </h3>
-        <p>
-            A polygon whose diagonal lines can only be inside.
-        </p>
-    <h3>
-        Convex
-    </h3>
-        <p>
-            A polygon whose diagonal lines can only be outside.
-        </p>
-    <h3>
-        Consecutive lines
-    </h3>
-        <p>
-            Two sides with a common endpoint.
-        </p>
-    <h3>
-        Arc
-    </h3>
-        <p>
-            A portion of a circle that can be half of a circle, the majority of a circle, or a minor section of a circle.
-        </p>
-    <h3>
-        Inscribed Angle
-    </h3>
-        <p>
-            An angle whose vertex is on the circle with two connecting chords.
-        </p>
-    <h3>
-        Intercepted Arc
-    </h3>
-        <p>
-            The arc that is inside the inscribed angle and whose endpoints are on the angle.
-        </p>
-    <h3>
-        Theorem
-    </h3>
-        <p>
-            A claim that can be proved to be true using well-accepted mathematical procedures and justifications.
-        </p>
-    <h3>
-        Radii
-    </h3>
-        <p>
-            A plural for radius.
-    </p>
-    <h3>
-        Equidistant
-    </h3>
-        <p>
-            Each object in the set is equally distanced from that point.
-        </p>
-    <h3>
-        Tangent
-    </h3>
-        <p>
-            A straight line that meets a curve or curved surface at a particular place but does not cross it when extended.
-        </p>
-    <h3>
-        Coplanar
-    </h3>
-        <p>
-            Set of points or lines on the same plane.
-        </p>
-    <h3>
-        Segment Bisector
-    </h3>
-        <p>
-            A line or a segment that cuts a line segment in half.
-        </p>
-    <h3>
-        Skew lines
-    </h3>
-        <p>
-            Skewed lines are two lines that are not parallel to one another, nor do they intersect.
-        </p>
-
+    <script>
+        displayWord('Congruent:', ' Has equal size and shape.   ' ,'   The triangle has 3 sides and 3 angles just like the other triangle, therefore they must be congruent.    ');
+        displayWord('Concurrent:', 'Three or more lines that intersect at one point. ','Multitasking computers are capable of performing concurrent tasks.' );
+        displayWord('Concave:', ' A polygon whose diagonal lines can only be inside.  ',  'The inside of that bowl rounded inward looks like a concave polygon.');
+        displayWord('Convex: ', ' A polygon whose diagonal lines can only be outside. ', 'The outside of a ball rounded outward looks like a convex polygon.');
+        displayWord('Consecutive lines:', ' Two sides with a common endpoint.', 'After 100 consecutive lines on the paper, his pen ran out of ink.');
+        displayWord('Arc: ', 'A portion of a circle that can be half of a circle, the majority of a circle, or a minor section of a circle.', 'He bent the fragile twig into an arc. ');
+        displayWord('Inscribed Angle:', 'An angle whose vertex is on the circle with two connecting chords.', 'A real life example of an inscribed angle is a sniper target grid.');
+        displayWord('Intercepted Arc:', 'The arc that is inside the inscribed angle and whose endpoints are on the angle. ', 'A bow looks like an intercepted arc intercepted by the arrow.');
+        displayWord('Tangent:', 'A line touching a circle at one point.', 'When a cycle moves along a road, then the road becomes the tangent at each point when the wheels rolls on it. ');
+        displayWord('Theorem:', 'A claim that can be proved to be true using well-accepted mathematical procedures and justifications. ', 'The Pythagoras Theorem proved that a2 + b2 = c2 for a right angled triangle.');
+        displayWord('Radii:', ' A plural for radius. ', 'There where alot of different radii in my assignments');
+        displayWord('Equidistant:', 'Each object in the set is equally distanced from that point.', 'Montreal is roughly equidistant from New York, Boston, and Toronto.');
+        displayWord('Skew line:', ' Skewed lines are two lines that are not parallel to one another, nor do they intersect.','The different types of roads as highways and overpasses appear like skew lines since theyre neither parallel nor coplanar.');
+        displayWord('Coplanar:', 'Set of points or lines on the same plane.', 'The tiny marbles on the table look coplanar.');
+        displayWord('Segment Bisector:', ' A line or a segment that cuts a line segment in half. ', 'The windows have a segment bisector in the middle cutting the line segment of the window exactly in half.');
+    </script>
+    
 <a href="index.html" target="_self "title="help me" >
  back to main page
  </a>
